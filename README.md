@@ -18,3 +18,11 @@ A Node.js + Express web application to search and manage schools based on geogra
 - EJS (Embedded JavaScript Templates)
 - Joi (for validation)
 - UUID (for unique school IDs)
+
+/**
+ * ⚠ WARNING:
+ * This project uses free hosting services (Render for deployment and FreeSQLDatabase for MySQL).
+ * These services may go idle when inactive, causing temporary unavailability of the server or database.
+ * 
+ * If the application or APIs appear unresponsive, please restart the server or contact the developer.
+ */
