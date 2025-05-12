@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <h4 class="mt-3">Enter School Details</h4>
+        <form class="row col-md-7 mx-auto g-3 needs-validation mt-4 schoolForm" method="post" action="/addSchool"
+            novalidate>
+            <div class="col-12">
+                <label for="name" class="form-label">School Name:</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter School Name" required>
+                <div class="invalid-feedback">
+                    Enter School Name
+                </div>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address:</label>
+                <textarea name="address" id="address" class="form-control" placeholder="Enter School Address"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    Enter School Address
+                </div>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label for="latitude" class="form-label">Latitude</label>
+                <input type="number" class="form-control" id="latitude" step="any" name="latitude"
+                    placeholder="Enter latitude" required>
+                <div class="invalid-feedback">
+                    Enter Correct Coordinates
+                </div>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label for="longitude" class="form-label">Longitude</label>
+                <input type="number" class="form-control" id="longitude" step="any" name="longitude"
+                    placeholder="Enter longitude" required>
+                <div class="invalid-feedback">
+                    Enter Correct Coordinates
+                </div>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary searchBtn">Add School</button>
+        </form>
+    </body>

@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <body>
+    <h4 class="mt-4">Enter Location (or let us detect it)</h4>
+    <button onclick="getLocation()" class="btn btn-info getLoc">Get My Location</button>
+    <form class="row col-md-5 mx-auto g-3 needs-validation mt-4 locationForm" method="get" action="/listSchool" novalidate>
+      <div class="col-lg-6">
+        <label for="latitude" class="form-label">Latitude</label>
+        <input type="number" class="form-control" id="latitude" step="any" name="latitude" placeholder="Enter latitude" required>
+        <div class="invalid-feedback">
+          Enter Correct Coordinates
+        </div>
+        <div class="valid-feedback">
+          Looks Good
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <label for="longitude" class="form-label">Longitude</label>
+        <input type="number" class="form-control" id="longitude" step="any" name="longitude" placeholder="Enter longitude" required>
+         <div class="invalid-feedback">
+          Enter Correct Coordinates
+        </div>
+        <div class="valid-feedback">
+          Looks Good
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary searchBtn">Find School</button>
+    </form>
+    <script>
+      function getLocation() {
+        const latInput = document.getElementById('latitude');
+        const lonInput = document.getElementById('longitude');
+
+        if (!latInput.value || !lonInput.value) {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+              latInput.value = position.coords.latitude;
+              lonInput.value = position.coords.longitude;
+            }, (err) => {
+              console.error("Geolocation error:", err.message);
+            });
+          } else {
+            alert("Geolocation not supported");
+          }
+        }
+      };
+    </script>
+  </body>
