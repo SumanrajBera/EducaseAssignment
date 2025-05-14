@@ -14,7 +14,7 @@ A Node.js + Express web application to search and manage schools based on geogra
 
 - Node.js
 - Express.js
-- MySQL (or any SQL DB with compatible queries)
+- MySQL 
 - EJS (Embedded JavaScript Templates)
 - Joi (for validation)
 - UUID (for unique school IDs)
